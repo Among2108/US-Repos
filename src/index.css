@@ -1,1 +1,83 @@
 @import "tailwindcss";
+
+@layer base {
+  p {
+    @apply text-center;
+  }
+  body {
+    background-image: linear-gradient(
+      to right top,
+      #ff9671,
+      #ff9e6c,
+      #ffa768,
+      #ffb064,
+      #ffba61,
+      #ffb661,
+      #ffb261,
+      #ffae61,
+      #ff9c67,
+      #ff8b72,
+      #ff7c81,
+      #ff6f91
+    );
+  }
+}
+
+table {
+  border: solid 5px #ff7c81;
+  width: 600px;
+  margin-top: 5rem;
+  animation: pulse-glow-orange-pink 1s ease-in-out infinite;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Adds a bottom border to cells */
+}
+
+/* Styling for the table header */
+thead tr {
+  background-color: #009879; /* Brand color for header */
+  color: #ffffff;
+  text-align: left;
+}
+
+/* Zebra striping for the table body */
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+/* Highlight row on hover */
+tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Optional: Make the table responsive by wrapping it in a div with overflow-x: auto */
+.table-container {
+  overflow-x: auto;
+}
+
+
+
+@keyframes pulse-glow-orange-pink {
+  0% {
+    box-shadow:
+      10px 6px 22px rgba(255, 140, 0, 0.8),
+     -10px -6px 22px rgba(255, 60, 150, 0.6);
+  }
+
+  50% {
+    box-shadow:
+     -12px -8px 30px rgba(255, 60, 150, 0.9),
+      12px 8px 30px rgba(255, 170, 90, 0.8);
+  }
+
+  100% {
+    box-shadow:
+      10px 6px 22px rgba(255, 140, 0, 0.8),
+     -10px -6px 22px rgba(255, 60, 150, 0.6);
+  }
+}
