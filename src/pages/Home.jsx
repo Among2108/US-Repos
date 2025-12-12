@@ -3,6 +3,7 @@ import User from "../components/User";
 import { Admin } from "../components/Admin";
 import ViewButton from "../components/ViewButton";
 import axios from "axios";
+import InputFrom from "../components/InputFrom";
 
 const Home = () => {
   const dataPerson = "https://67eca027aa794fb3222e43e2.mockapi.io/members";
@@ -59,8 +60,8 @@ const Home = () => {
 
 
       {view === "User" && <User data={data} />}
-      {view === "Admin" && <Admin data={data} />}
-
+      {view === "Admin" && <InputFrom />}
+      {view === "Admin" && <Admin data={data} onUserDeleted={fetchData} />}
     </div>
   );
 };

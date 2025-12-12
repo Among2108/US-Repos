@@ -8,7 +8,7 @@ const Owner = () => {
           26 Oassalam Promjit (อัส) - JSDX
         </h1>
         <div className="flex justify-center pt-7 pb-7">
-          <img src="../public/IMG_8105.jpg" alt="" className="w-52 " />
+          <img src="IMG_8105.jpg" alt="" className="w-52 " />
         </div>
         <h2 className="text-center text-lg font-bold">short biography</h2>
         <p className="text-sm text-black mx-auto  max-w-md line-clamp-5 leading-relaxed">

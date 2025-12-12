@@ -2,6 +2,7 @@ import React from 'react'
 
 const ViewButton = ({onClick,children}) => {
   return (
+    
     <button
     onClick={onClick}
     className='w-50 h-13 text-black cursor-pointer text-base font-bold text-center 
@@ -12,6 +13,7 @@ const ViewButton = ({onClick,children}) => {
     >
         {children}
     </button>
+    
   )
 }
 

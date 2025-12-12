@@ -1,9 +1,22 @@
 // rafce
 import React from "react";
-import { Axios } from "axios";
+import  axios  from "axios";
 
-export const Admin = ({ data = [] }) => {
+export const Admin = ({ data = [],onUserDeleted } ) => {
+      const handleDelete = async (id) => {
+        try {
+            const isConfirm = confirm("Are you sure? 😢");
+            if (!isConfirm) return;
 
+            await axios.delete(`https://67eca027aa794fb3222e43e2.mockapi.io/members/${id}`);
+
+            if (onUserDeleted) {
+                onUserDeleted();
+            }
+        } catch (error) {
+            console.error("Error deleting user:", error);
+        }
+    }
   return (
     <>
       <div className="flex justify-center  ">
@@ -22,7 +35,16 @@ export const Admin = ({ data = [] }) => {
                 <td>{item.name}</td>
                 <td>{item.lastname}</td>
                 <td>{item.position}</td>
-                <td>Delete</td>
+                <td>
+                  {" "}
+                  <a
+                    className="hover:underline text-red-600 font-normal cursor-pointer"
+                    onClick={() => {
+                      handleDelete(item.id);
+                    }}
+                  >Delete
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>
