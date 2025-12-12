@@ -1,7 +1,7 @@
 // rafce
 import React from "react";
 
-export const Admin = () => {
+export const Admin = ({ data = []}) => {
   return (
     <>
       <div className="mt-8 ">
