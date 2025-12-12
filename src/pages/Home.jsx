@@ -3,9 +3,24 @@ import { useState } from 'react'
 import User from '../components/User'
 import { Admin } from '../components/Admin'
 import ViewButton from '../components/ViewButton'
+import axios from 'axios';
 
 const Home = () => {
   const [view, setView] = useState("")
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(null)
+  const [view, setView] = useState(true)
+  const [url, setUrl] = useState("")
+  const fectData = async () => {
+    setLoading(true);
+    try{
+      let response = await axios.get("https://67eca027aa794fb3222e43e2.mockapi.io/members")
+      setData(response.data)
+    } finally {
+      setLoading(false)
+    }
+  };
+
   return (
     < >
     <div className='w-full min-h-screen '>

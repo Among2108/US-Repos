@@ -1,4 +1,4 @@
-import { Children } from "react";
+import { Children, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./components/Layout";
@@ -19,6 +19,7 @@ const router = createBrowserRouter([
     {path: "owner",element: <Owner />}
   ]
 }])
+
 
 export default function App() {
   return (
