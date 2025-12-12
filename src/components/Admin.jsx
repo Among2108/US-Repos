@@ -1,51 +1,33 @@
 // rafce
 import React from "react";
+import { Axios } from "axios";
 
-export const Admin = ({ data = []}) => {
+export const Admin = ({ data = [] }) => {
+
   return (
     <>
-      <div className="mt-8 ">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-semibold mb-2">Create User Here</h2>
-          <div className="flex flex-wrap gap-4">
-            <input
-              className="px-4 py-2 bg-white rounded shadow-sm flex-1"
-              placeholder="Name"
-            />
-            <input
-              className="px-4 py-2 bg-white rounded shadow-sm flex-1"
-              placeholder="Last Name"
-            />
-            <input
-              className="px-4 py-2 bg-white rounded shadow-sm flex-1"
-              placeholder="Position"
-            />
-            <button className="px-5 py-2 rounded bg-indigo-500 text-white font-medium transition-all duration-200 hover:shadow-[0px_0px_17px_-4px_#2b2bff] 
- hover:border-[#3838ff] hover:bg-[#6e6eff] active:shadow-[0px_0px_17px_-4px_#2b2bff] 
- active:border-[#3838ff] active:scale-95">
-              Save
-            </button>
-          </div>
-        </div>
-      </div>
       <div className="flex justify-center  ">
-        {/*เช็คของui*/}
         <table>
-          <tr>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Action</th>
-          </tr>
-          <tr>
-            <td>Oassalam</td>
-            <td>Promjit</td>
-            <td>Bankok</td>
-            <td>Delete</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Last Name</th>
+              <th>Position</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.lastname}</td>
+                <td>{item.position}</td>
+                <td>Delete</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
-      {/*เช็คของui*/}
     </>
   );
 };

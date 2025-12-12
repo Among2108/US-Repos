@@ -15,8 +15,8 @@ const User = ({ data = [] }) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
-              <tr>
+            {data.map ((item) => (
+              <tr key={item.id}>
                 <td>{item.name}</td>
                 <td>{item.lastname}</td>
                 <td>{item.position}</td>
