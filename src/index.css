@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@layer base {
+    p {
+        @apply text-center;
+    }
+    body {
+        background-image: linear-gradient(to right top, #ff9671, #ff9e6c, #ffa768, #ffb064, #ffba61, #ffb661, #ffb261, #ffae61, #ff9c67, #ff8b72, #ff7c81, #ff6f91);
+    }
+}
+
+table {
+    border-width: 2px ;
+    width: 600px;
+    margin-top: 5rem;
+ }
+ tr {border-width: 2px;}
+ th {border-width: 2px;}
+ td {border-width: 2px;}
